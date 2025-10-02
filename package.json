@@ -1,0 +1,16 @@
+{
+  "name": "pilatify",
+  "version": "1.0.0",
+  "description": "Pilates workout app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node pilatify.html/server.js",
+    "dev": "node pilatify.html/server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5"
+  }
+}

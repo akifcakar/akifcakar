@@ -13,6 +13,9 @@ const JWT_SECRET = 'sizin_super_guvenli_gizli_anahtariniz';
 app.use(cors()); // Frontend'den gelen isteklere izin ver
 app.use(express.json()); // Gelen JSON body'lerini parse et
 
+// Statik dosyaları sunmak için (HTML, CSS, JS)
+app.use(express.static(__dirname));
+
 // --- AUTHENTICATION MIDDLEWARE ---
 // Bu ara yazılım, korunması gereken endpoint'lerden önce çalışır.
 // Gelen isteğin header'ındaki token'ı kontrol eder.
@@ -53,26 +56,26 @@ const mockUsers = [
     {
         id: 1,
         username: 'jane',
-        // 'password' kelimesinin hash'i. Gerçek bir hash ürettim.
-        passwordHash: '$2b$10$E9.UP21x2FEhS58J13.pA.VjO9S.pG/O5aJzO9S.pG/O5aJzO9S.p', 
+        passwordHash: '$2b$10$iV37egyRYFL/LQPmt7IDNuLwL/e/InNuyUqSQ5T..fDebl.GYacfm',
         email: 'jane.doe@example.com',
         name: 'Jane Doe',
         age: 28,
         height: 165,
         weight: 68,
         goal: 'Lose Weight',
+        weightHistory: [{ date: '2024-05-01', weight: 68 }],
     },
     {
         id: 2,
         username: 'john',
-        // 'password123' kelimesinin bcrypt ile hash'lenmiş hali
-        passwordHash: '$2b$10$anotherHashValueForJohnsPasswordGoesHere123',
+        passwordHash: '$2b$10$oaMCLmD/rBdthscYBYSUHuxvigWBhxlweGqizyyQqB7au9uCLivR2',
         email: 'john.smith@example.com',
         name: 'John Smith',
         age: 32,
         height: 180,
         weight: 85,
         goal: 'Build Muscle',
+        weightHistory: [{ date: '2024-06-01', weight: 85 }],
     }
 ];
 

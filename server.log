@@ -1,0 +1,5 @@
+
+> pilatify@1.0.0 start
+> node pilatify.html/server.js
+
+Backend sunucusu http://localhost:3000 adresinde çalışıyor.
