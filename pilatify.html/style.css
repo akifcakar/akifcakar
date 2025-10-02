@@ -1,0 +1,140 @@
+/* Custom styles for the app prototype */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8fafc; /* Lighter, cooler gray (slate-50) */
+}
+
+.mobile-shell {
+    width: 100%;
+    max-width: 430px; /* Adjusted for iPhone 16 Pro Max aspect ratio */
+    height: 100vh;
+    max-height: 932px; /* Adjusted for iPhone 16 Pro Max aspect ratio */
+    box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.2);
+    border-radius: 40px;
+    overflow: hidden;
+    border: 8px solid #1a1a1a;
+}
+
+#main-content {
+    -webkit-overflow-scrolling: touch; /* Momentum-based scrolling for a native feel on iOS */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #fca5a5; /* rose-300 */
+    border-radius: 20px;
+}
+.custom-scrollbar-none::-webkit-scrollbar {
+    display: none;
+}
+
+/* Gradient text */
+.gradient-text {
+    background: linear-gradient(90deg, #fb7185, #fdba74);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Active nav indicator */
+.nav-button.active span {
+    font-weight: 600;
+}
+
+/* Smooth page transition */
+.page {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.modal {
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.content-fade-in {
+    animation: fadeInContent 0.4s ease-in-out;
+}
+
+@keyframes fadeInContent {
+    from { opacity: 0.5; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Progress circle animation */
+.progress-ring__circle {
+    stroke-dasharray: 314, 314;
+    transition: stroke-dashoffset 0.8s ease-out;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+
+/* Custom checkbox */
+.custom-checkbox:checked {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+}
+
+/* Daily progress bar animation */
+.progress-bar-inner {
+    transition: width 0.5s ease-in-out;
+}
+
+/* Loading Spinner */
+.spinner {
+    border: 2px solid rgba(255,255,255,0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Custom bounce-in animation for achievement modal */
+@keyframes bounce-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.modal-bounce-in {
+    animation: bounce-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* Goal Editor Styles */
+.goal-editor {
+    cursor: pointer;
+    display: inline-block;
+    padding: 2px 4px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.goal-editor:hover {
+    background-color: #f3f4f6; /* gray-100 */
+}
+
+.goal-editor.editing {
+    background-color: #f3f4f6; /* gray-100 */
+    padding: 0;
+}
+
+.goal-input {
+    width: 60px; /* Adjust width as needed */
+    background-color: transparent;
+}
